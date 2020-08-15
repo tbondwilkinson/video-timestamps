@@ -14,6 +14,8 @@ Start the node server:
 node server.js
 ```
 
+This starts the server listening on port 8080. Go to `localhost:8080` to see the page.
+
 ## Requirements
 
 npm, node.

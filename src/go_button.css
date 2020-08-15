@@ -1,0 +1,7 @@
+.go-button {
+	background-color: green;
+	color: white;
+	margin-left: 40px;
+	padding: calc(4px + 0.5vmin) calc(6px + 0.5vmin);
+  	font-size: calc(8px + 1vmin);
+}

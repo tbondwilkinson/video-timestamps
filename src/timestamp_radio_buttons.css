@@ -1,0 +1,19 @@
+.timestamp-radio-buttons {
+	display: grid;
+	grid-template-columns: repeat(3, max-content);
+}
+
+.radio-option {
+	padding: 4px 10px ;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.radio-option label {
+	margin-left: 10px;
+}
+
+.radio-option input {
+	margin: 0px;
+}

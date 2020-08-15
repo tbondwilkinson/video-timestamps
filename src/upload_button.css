@@ -1,0 +1,17 @@
+.upload-button {
+	padding: calc(4px + 0.5vmin) calc(6px + 0.5vmin);
+  font-size: calc(8px + 1vmin);
+}
+
+.upload-button-filename {
+	font-size: calc(6px + 1vmin);
+}
+
+.upload-button-invalid.noshow {
+	display: none;
+}
+
+.upload-button-invalid {
+	font-size: calc(6px + 1vmin);
+	color: red;
+}

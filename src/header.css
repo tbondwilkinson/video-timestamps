@@ -1,0 +1,6 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: calc(16px + 1vmin);
+}

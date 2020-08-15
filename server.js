@@ -38,7 +38,7 @@ app.post('/burn-timecode', upload.single('movie'), async (req, res) => {
 		const extension = req.file.path.split('.').pop();
 		const outputPath = path.substring(0, path.length - extension.length) + '-output.' + extension;
 		const {stdout, stderr} = await execAndWait(
-			`ffmpeg -i ${path} -vf "drawtext=text='%{pts\:hms}':fontsize=48:fontcolor=white:box=1:boxborderw=6:boxcolor=black@0.75:x=(w-text_w)/2:y=h-text_h-20" -c:a copy ${outputPath}`);
+			`ffmpeg -i ${path} -vf "drawtext=text='%{pts\\:hms}':fontsize=48:fontcolor=white:box=1:boxborderw=6:boxcolor=black@0.75:x=(w-text_w)/2:y=h-text_h-20" -c:a copy ${outputPath}`);
 		res.sendFile(outputPath);
 	} catch (e) {
 		res.send(`Error while processing file: ${e}`);

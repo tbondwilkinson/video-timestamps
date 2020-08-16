@@ -2,7 +2,13 @@ A React frontend and Express Node server to upload and burn timestamps into movi
 
 ## Running locally
 
-Build the React app:
+In the top-level directory, install all the dependencies:
+
+```
+npm install
+```
+
+Build the React application for deployment:
 
 ```
 npm run build

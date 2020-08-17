@@ -26,11 +26,16 @@ const storage = multer.diskStorage({
 const upload = multer({storage});
 
 const app = express();
-app.use(express.static(path.join(__dirname, 'build')));
 
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'))
-});
+const static = express.static(path.join(__dirname, 'build'));
+app.use(static);
+app.use('/timestamp', static);
+
+function getIndex(req, res) {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+}
+app.get('/', getIndex);
+app.get('/timestamp', getIndex)
 
 function getTimestampCenter(location) {
 	switch (location) {
@@ -51,7 +56,7 @@ function getTimestampCenter(location) {
 	}
 }
 
-app.post('/burn-timecode', upload.single('movie'), async (req, res) => {
+async function postBurnTimecode(req, res) {
 	try {
 		const path = req.file.path;
 		const extension = req.file.path.split('.').pop();
@@ -64,6 +69,9 @@ app.post('/burn-timecode', upload.single('movie'), async (req, res) => {
 	} catch (e) {
 		res.send(`Error while processing file: ${e}`);
 	}
-});
+}
+
+app.post('/burn-timecode', upload.single('movie'), postBurnTimecode);
+app.post('/timestamp/burn-timecode', upload.single('movie'), postBurnTimecode);
 
 app.listen(8080);

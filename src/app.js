@@ -24,7 +24,7 @@ class App extends React.Component {
           </div>
           <form
             name="burn-in-time-code"
-            action="/timestamp/burn-timecode"
+            action="/burn-timecode"
             method="POST"
             enctype="multipart/form-data"
             onSubmit={this.handleSubmit}>

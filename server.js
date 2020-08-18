@@ -72,6 +72,7 @@ async function postBurnTimecode(req, res) {
 }
 
 app.post('/burn-timecode', upload.single('movie'), postBurnTimecode);
+app.post('//burn-timecode', upload.single('movie'), postBurnTimecode);
 app.post('/timestamp/burn-timecode', upload.single('movie'), postBurnTimecode);
 
 app.listen(8080);
